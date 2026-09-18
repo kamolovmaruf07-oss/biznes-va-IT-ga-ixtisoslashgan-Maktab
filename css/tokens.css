@@ -1,0 +1,96 @@
+/* =========================================================
+   tokens.css — Dizayn tokenlari: kun (light) va tun (dark)
+   Soft UI / neymorfizm palitrasi: och sariq + to'q sariq
+   ========================================================= */
+
+:root {
+  /* --- KUN (light) --- */
+  color-scheme: light;
+
+  --bg: #f8f1dc;            /* och sariq fon */
+  --bg-alt: #f3ead1;        /* alternativ seksiyalar foni */
+  --surface: #f8f1dc;       /* neymorfizm sirti = fon */
+  --sh-dark: #d5c49b;       /* iliq soya */
+  --sh-light: #ffffff;      /* yorug' qirra */
+
+  --text: #453a1f;
+  --muted: #7e7050;
+
+  --gold-1: #ffd75e;        /* och sariq */
+  --gold-2: #f2b705;        /* asosiy sariq */
+  --gold-3: #c98a00;        /* to'q sariq */
+  --gold-4: #8a6100;        /* juda to'q (matn uchun) */
+
+  --accent: #e2a504;
+  --accent-ink: #8a6100;    /* linklar uchun to'q sariq */
+  --accent-soft: #ffefc2;   /* yumshoq sariq plashka */
+  --grad-gold: linear-gradient(135deg, #ffd75e 0%, #f2b705 55%, #d9950a 100%);
+
+  --ok: #4c8f3f;
+  --err: #c2452d;
+
+  /* --- Neymorfik soyalar --- */
+  --neu-out: 9px 9px 22px var(--sh-dark), -9px -9px 22px var(--sh-light);
+  --neu-out-sm: 5px 5px 12px var(--sh-dark), -5px -5px 12px var(--sh-light);
+  --neu-out-xs: 3px 3px 7px var(--sh-dark), -3px -3px 7px var(--sh-light);
+  --neu-in: inset 5px 5px 11px var(--sh-dark), inset -5px -5px 11px var(--sh-light);
+  --neu-in-sm: inset 3px 3px 7px var(--sh-dark), inset -3px -3px 7px var(--sh-light);
+
+  /* --- Geometriya --- */
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 26px;
+  --r-xl: 34px;
+  --r-pill: 999px;
+
+  /* --- Tipografika --- */
+  --font: 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --fs-h1: clamp(2.4rem, 5.2vw, 3.9rem);
+  --fs-h2: clamp(1.7rem, 3.4vw, 2.5rem);
+  --fs-h3: 1.06rem;
+  --fs-body: 1rem;
+  --fs-small: .86rem;
+
+  /* --- Ritm --- */
+  --sec-pad: clamp(4rem, 8vw, 7rem);
+  --container: 1180px;
+  --header-h: 84px;
+
+  /* --- Harakat --- */
+  --t-fast: .18s ease;
+  --t-med: .32s cubic-bezier(.4, 0, .2, 1);
+  --t-slow: .6s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* --- TUN (dark) --- */
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #201a0e;
+  --bg-alt: #241d10;
+  --surface: #201a0e;
+  --sh-dark: #0d0a04;
+  --sh-light: #362d18;
+
+  --text: #f2e7c9;
+  --muted: #b3a47d;
+
+  --gold-1: #ffe08a;
+  --gold-2: #ffc93c;
+  --gold-3: #f2b705;
+  --gold-4: #ffd75e;
+
+  --accent: #ffc93c;
+  --accent-ink: #ffd75e;
+  --accent-soft: rgba(255, 201, 60, .12);
+  --grad-gold: linear-gradient(135deg, #ffe08a 0%, #ffc93c 55%, #e2a504 100%);
+
+  --ok: #8fd07f;
+  --err: #ff8a70;
+
+  --neu-out: 9px 9px 22px var(--sh-dark), -9px -9px 22px var(--sh-light);
+  --neu-out-sm: 5px 5px 12px var(--sh-dark), -5px -5px 12px var(--sh-light);
+  --neu-out-xs: 3px 3px 7px var(--sh-dark), -3px -3px 7px var(--sh-light);
+  --neu-in: inset 5px 5px 11px var(--sh-dark), inset -5px -5px 11px var(--sh-light);
+  --neu-in-sm: inset 3px 3px 7px var(--sh-dark), inset -3px -3px 7px var(--sh-light);
+}

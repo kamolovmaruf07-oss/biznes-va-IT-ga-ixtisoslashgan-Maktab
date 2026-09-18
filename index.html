@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="uz" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biznes va IT ga ixtisoslashgan maktab — Portfolio</title>
+  <meta name="description" content="Biznes va IT ga ixtisoslashgan maktab: zamonaviy dasturlash, robototexnika, tadbirkorlik va moliya yo'nalishlari. Amaliyot asosida ta'lim, xalqaro hamkorlik va karyera markazi." />
+  <meta id="metaTheme" name="theme-color" content="#F8F1DC" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Biznes va IT ga ixtisoslashgan maktab" />
+  <meta property="og:description" content="Kelajak kasblari — bugun. Dasturlash, robototexnika, tadbirkorlik va moliya yo'nalishlarida amaliy ta'lim." />
+  <meta property="og:image" content="assets/img/hero-campus.webp" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <script>
+    /* FOUC ning oldini olish: mavzuni renderdan oldin qo'llaymiz */
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('bitmaktab-theme'); } catch (e) {}
+      var sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', saved || sys);
+    })();
+  </script>
+</head>
+<body>
+  <!-- ======= SVG SPRITE ======= -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+    <defs>
+      <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#FFD75E"/>
+        <stop offset="1" stop-color="#D9950A"/>
+      </linearGradient>
+    </defs>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 20V4M6 10l6-6 6 6"/></symbol>
+    <symbol id="i-chev-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-chev-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-cpu" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><rect x="10.5" y="10.5" width="3" height="3" rx=".5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-smartphone" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.4 8.1-8 9-4.6-.9-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-bot" viewBox="0 0 24 24"><rect x="5" y="9" width="14" height="9" rx="3"/><path d="M12 9V6M12 4.5v.01M9.5 13.5v.01M14.5 13.5v.01M2 13h3M19 13h3"/></symbol>
+    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a7 7 0 0 0-4.1 12.7c.7.5 1.1 1.4 1.1 2.3h6c0-.9.4-1.8 1.1-2.3A7 7 0 0 0 12 3z"/></symbol>
+    <symbol id="i-coins" viewBox="0 0 24 24"><circle cx="9" cy="9" r="6"/><path d="M18.1 10.4A6 6 0 1 1 10.4 18M8 6h1v4M16.7 13.9l.7.7-2.8 2.8"/></symbol>
+    <symbol id="i-megaphone" viewBox="0 0 24 24"><path d="M3 11l18-6v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.4 3.4-5 6.5-5s5.7 1.6 6.5 5M16 5a3.5 3.5 0 0 1 0 7M18 15.5c2 .6 3.2 2 3.7 4.5"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.6 12.4A2 2 0 0 0 9.6 17H18a2 2 0 0 0 2-1.6L21.5 8H6"/></symbol>
+    <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></symbol>
+    <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="2.5" y="7" width="19" height="13" rx="2.5"/><path d="M8 7V5.5A2.5 2.5 0 0 1 10.5 3h3A2.5 2.5 0 0 1 16 5.5V7M2.5 12.5h19"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6c-2-1.8-4.8-2.5-9-2.5v14c4.2 0 7 .7 9 2.5 2-1.8 4.8-2.5 9-2.5v-14c-4.2 0-7 .7-9 2.5z"/><path d="M12 6v14"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+    <symbol id="i-call" viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a12 12 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5-5.9-3.2-5.9 3.2 1.2-6.5L2.5 9.4l6.6-.9z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M7 4h10v6a5 5 0 0 1-10 0z"/><path d="M7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M12 15v3M8 21h8M10 18h4"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5M22 9v5"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24"><path d="M21.9 4.4L2.9 11.7c-1 .4-1 1.8.1 2.1l4.6 1.4 1.8 5.4c.3.9 1.4 1.1 2 .4l2.5-2.6 4.7 3.5c.8.6 1.9.1 2.1-.9l3-15c.2-1-.8-1.9-1.8-1.6zM8.5 14.6l9-6.1-7.2 7.2-.2 3.4z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.8v.01"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path d="M14 8.5h3v-4h-3c-2.8 0-5 2.2-5 5v2.5H6v4h3v7.5h4V16h3l1-4h-4V9.5c0-.6.4-1 1-1z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10.5 9.5l5 2.5-5 2.5z" fill="currentColor" stroke="none"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#bosh">Asosiy kontentga o'tish</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- ======= HEADER ======= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#bosh" aria-label="Bosh sahifa">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48"><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#lg1)"/><path d="M24 13l10 4.5-10 4.5-10-4.5z" fill="#fff" opacity=".95"/><path d="M18 21v4.2c0 1.9 2.7 3.3 6 3.3s6-1.4 6-3.3V21" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M30 19.5v5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="30" cy="26.5" r="1.6" fill="#fff"/></svg>
+        </span>
+        <span class="brand-text">
+          <strong>BIT Maktab</strong>
+          <small>Biznes &amp; IT ta'lim markazi</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Asosiy navigatsiya">
+        <a href="#bosh" class="nav-link is-active">Bosh sahifa</a>
+        <a href="#haqida" class="nav-link">Maktab</a>
+        <a href="#yonalishlar" class="nav-link">Yo'nalishlar</a>
+        <a href="#kurslar" class="nav-link">Kurslar</a>
+        <a href="#ustozlar" class="nav-link">Ustozlar</a>
+        <a href="#yutuqlar" class="nav-link">Yutuqlar</a>
+        <a href="#galereya" class="nav-link">Galereya</a>
+        <a href="#aloqa" class="nav-link">Aloqa</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Tun va kun rejimini almashtirish">
+          <span class="tt-track" aria-hidden="true">
+            <svg class="tt-icon tt-sun"><use href="#i-sun"/></svg>
+            <svg class="tt-icon tt-moon"><use href="#i-moon"/></svg>
+            <span class="tt-knob"></span>
+          </span>
+        </button>
+        <a class="btn btn-primary btn-sm header-cta" href="#aloqa">
+          Qabulga yozilish
+          <svg class="icon"><use href="#i-arrow-right"/></svg>
+        </a>
+        <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Menyuni ochish">
+          <svg class="icon icon-menu"><use href="#i-menu"/></svg>
+          <svg class="icon icon-close"><use href="#i-x"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ======= HERO ======= -->
+    <section class="hero" id="bosh">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="badge-pill">
+            <svg class="icon"><use href="#i-sparkles"/></svg>
+            2018-yildan beri yetakchi ta'lim maskani
+          </span>
+          <h1>
+            Kelajak kasblarini
+            <span class="grad-text">bugun</span> o'rgatamiz
+          </h1>
+          <p class="lead">
+            Biznes va IT ga ixtisoslashgan maktab — dasturlash, robototexnika, sun'iy intellekt
+            va tadbirkorlik yo'nalishlarida amaliyot asosida ta'lim beruvchi zamonaviy maskan.
+            Har bir o'quvchi real loyihalar ustida ishlab, kasbga tayyor holda bitiradi.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#kurslar">
+              Kurslarni ko'rish
+              <svg class="icon"><use href="#i-arrow-right"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="#haqida">
+              <svg class="icon"><use href="#i-book"/></svg>
+              Maktab bilan tanishish
+            </a>
+          </div>
+          <ul class="hero-stats" role="list">
+            <li><strong>1240+</strong><span>o'quvchi</span></li>
+            <li><strong>26</strong><span>amaliyotchi mentor</span></li>
+            <li><strong>98%</strong><span>oliy ta'limga qabul</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-media reveal" style="--d:.15s">
+          <figure class="neu neu-frame hero-frame">
+            <img src="assets/img/hero-campus.webp" alt="Maktab kampusining izometrik ilustratsiyasi" width="1600" height="900" fetchpriority="high" />
+          </figure>
+          <div class="float-chip chip-1 neu">
+            <span class="chip-icon"><svg class="icon"><use href="#i-cap"/></svg></span>
+            <span><strong>1240+</strong><small>o'quvchi tahsil olmoqda</small></span>
+          </div>
+          <div class="float-chip chip-2 neu">
+            <span class="chip-icon"><svg class="icon"><use href="#i-trophy"/></svg></span>
+            <span><strong>120 medal</strong><small>respublika olimpiadalari</small></span>
+          </div>
+          <div class="float-chip chip-3 neu">
+            <span class="chip-icon"><svg class="icon"><use href="#i-briefcase"/></svg></span>
+            <span><strong>34 hamkor</strong><small>IT va biznes kompaniyalar</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= HAQIDA ======= -->
+    <section class="section" id="haqida">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-media reveal">
+            <figure class="neu neu-frame">
+              <img src="assets/img/mentor.webp" alt="Ustoz o'quvchilar bilan individual shug'ullanmoqda" loading="lazy" />
+            </figure>
+            <div class="exp-badge neu">
+              <strong>8+</strong>
+              <span>yillik<br/>tajriba</span>
+            </div>
+          </div>
+          <div class="about-copy">
+            <span class="kicker reveal">Maktab haqida</span>
+            <h2 class="reveal" style="--d:.05s">Nazariya emas — <span class="grad-text">amaliyot</span> va natija</h2>
+            <p class="reveal" style="--d:.1s">
+              Maktabimiz 2018-yilda tashkil etilgan bo'lib, o'quvchilarni 7-sinfdan boshlab
+              IT va biznes fanlariga chuqur ixtisoslashtiradi. Darslarning 60% i amaliyot:
+              laboratoriyalar, hackathonlar, startup sessorlar va real buyurtmalar ustida ishlash.
+            </p>
+            <p class="reveal" style="--d:.15s">
+              Har bir o'quvchiga shaxsiy mentor biriktiriladi, portfolio tayyorlanadi va
+              bitiruvda hamkor kompaniyalarda stajirovka kafolatlanadi.
+            </p>
+            <div class="feature-grid">
+              <article class="feature-card neu reveal" style="--d:.1s">
+                <span class="icon-tile neu-inset"><svg class="icon"><use href="#i-cpu"/></svg></span>
+                <h3>Zamonaviy lablar</h3>
+                <p>120 o'rinli IT laboratoriya, robototexnika va 3D-printing studiyasi.</p>
+              </article>
+              <article class="feature-card neu reveal" style="--d:.15s">
+                <span class="icon-tile neu-inset"><svg class="icon"><use href="#i-briefcase"/></svg></span>
+                <h3>Karyera markazi</h3>
+                <p>Stajirovka, CV-portfolio va suhbatlarga tayyorlov dasturlari.</p>
+              </article>
+              <article class="feature-card neu reveal" style="--d:.2s">
+                <span class="icon-tile neu-inset"><svg class="icon"><use href="#i-globe"/></svg></span>
+                <h3>Xalqaro hamkorlik</h3>
+                <p>6 mamlakat maktablari bilan almashinuv va onlayn olimpiadalar.</p>
+              </article>
+              <article class="feature-card neu reveal" style="--d:.25s">
+                <span class="icon-tile neu-inset"><svg class="icon"><use href="#i-trend"/></svg></span>
+                <h3>Biznes inkubator</h3>
+                <p>O'quvchi startaplari uchun mentorlik, grant va demo-day imkoniyati.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= YO'NALISHLAR ======= -->
+    <section class="section section-alt" id="yonalishlar">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker reveal">Ta'lim yo'nalishlari</span>
+          <h2 class="reveal" style="--d:.05s">Ikki yo'nalish — <span class="grad-text">bir maqsad</span></h2>
+          <p class="section-sub reveal" style="--d:.1s">
+            O'quvchi qiziqishiga qarab IT yoki biznes yo'nalishini tanlaydi va 3 yillik
+            ixtisoslashuv dasturida bosqichma-bosqich professional darajaga chiqadi.
+          </p>
+        </div>
+
+        <div class="tabs neu-inset reveal" role="tablist" aria-label="Yo'nalishlar">
+          <button class="tab is-active" id="tab-it" role="tab" aria-selected="true" aria-controls="panel-it" type="button">
+            <svg class="icon"><use href="#i-code"/></svg> IT yo'nalishi
+          </button>
+          <button class="tab" id="tab-biz" role="tab" aria-selected="false" aria-controls="panel-biz" type="button">
+            <svg class="icon"><use href="#i-briefcase"/></svg> Biznes yo'nalishi
+          </button>
+        </div>
+
+        <div class="tab-panel is-active" id="panel-it" role="tabpanel" aria-labelledby="tab-it">
+          <div class="dir-grid">
+            <article class="dir-card neu reveal"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-code"/></svg></span><h3>Dasturlash asoslari</h3><p>Algoritmlar, Python va C++ da masala yechish, olimpiadaga tayyorlov.</p><span class="tag">7–11 sinf</span></article>
+            <article class="dir-card neu reveal" style="--d:.05s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-globe"/></svg></span><h3>Web texnologiyalar</h3><p>HTML, CSS, JavaScript, React va backend asoslari bilan to'liq stack.</p><span class="tag">Amaliy loyihalar</span></article>
+            <article class="dir-card neu reveal" style="--d:.1s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-smartphone"/></svg></span><h3>Mobil ilovalar</h3><p>Flutter va Dart da kross-platform ilovalar, Publish gacha bo'lgan yo'l.</p><span class="tag">Portfolio</span></article>
+            <article class="dir-card neu reveal" style="--d:.15s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-sparkles"/></svg></span><h3>Sun'iy intellekt</h3><p>Ma'lumotlar tahlili, mashina o'qitishiga kirish va AI loyihalar.</p><span class="tag">Data science</span></article>
+            <article class="dir-card neu reveal" style="--d:.2s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-shield"/></svg></span><h3>Kiberxavfsizlik</h3><p>Tarmoq xavfsizligi, CTF musobaqalari va himoyalangan kod yozish.</p><span class="tag">CTF jamoasi</span></article>
+            <article class="dir-card neu reveal" style="--d:.25s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-bot"/></svg></span><h3>Robototexnika</h3><p>Arduino, sensorlar va 3D modellashtirish asosida aqlli qurilmalar.</p><span class="tag">Maker lab</span></article>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-biz" role="tabpanel" aria-labelledby="tab-biz" hidden>
+          <div class="dir-grid">
+            <article class="dir-card neu"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-bulb"/></svg></span><h3>Tadbirkorlik</h3><p>G'oyadan biznes-modelgacha: MVP, mijoz tadqiqoti va pitch tayyorlash.</p><span class="tag">Startup lab</span></article>
+            <article class="dir-card neu" style="--d:.05s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-coins"/></svg></span><h3>Moliya va investitsiya</h3><p>Shaxsiy moliya, buxgalteriya asoslari va investitsion savodxonlik.</p><span class="tag">Amaliy keyslar</span></article>
+            <article class="dir-card neu" style="--d:.1s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-megaphone"/></svg></span><h3>Marketing va brend</h3><p>Raqamli marketing, SMM, kontent strategiya va brend pozitsiyalash.</p><span class="tag">Real kampaniyalar</span></article>
+            <article class="dir-card neu" style="--d:.15s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-users"/></svg></span><h3>Loyiha boshqaruvi</h3><p>Agile, Scrum va jamoa liderligi — real jamoalarda rollar bo'yicha amaliyot.</p><span class="tag">Agile/Scrum</span></article>
+            <article class="dir-card neu" style="--d:.2s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-cart"/></svg></span><h3>Elektron tijorat</h3><p>Onlayn do'kon ochish, logistika, to'lov tizimlari va savdo analitikasi.</p><span class="tag">E-commerce</span></article>
+            <article class="dir-card neu" style="--d:.25s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-award"/></svg></span><h3>Liderlik va muzokara</h3><p>Ommaviy nutq, muzokara texnikalari va shaxsiy brendni qurish.</p><span class="tag">Soft skills</span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= KURSLAR ======= -->
+    <section class="section" id="kurslar">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker reveal">Kurslar</span>
+          <h2 class="reveal" style="--d:.05s">O'z yo'lingizni <span class="grad-text">tanlang</span></h2>
+          <p class="section-sub reveal" style="--d:.1s">Har bir kurs real loyiha va himoya bilan yakunlanadi. Guruhlar 12 kishidan oshmaydi.</p>
+        </div>
+
+        <div class="filter-bar neu-inset reveal" role="group" aria-label="Kurslarni filtrlash">
+          <button class="filter-chip is-active" type="button" data-filter="all">Barchasi</button>
+          <button class="filter-chip" type="button" data-filter="it">IT</button>
+          <button class="filter-chip" type="button" data-filter="biznes">Biznes</button>
+        </div>
+
+        <div class="course-grid" id="courseGrid">
+          <article class="course-card neu reveal" data-cat="it">
+            <header><span class="level lvl-mid">O'rta</span><span class="cat-chip">IT</span></header>
+            <h3>Python va Sun'iy intellekt</h3>
+            <p>Python asoslari, ma'lumotlar bilan ishlash va mashina o'qitishiga kirish. Yakunda AI mini-loyiha himoyasi.</p>
+            <ul class="meta" role="list">
+              <li><svg class="icon"><use href="#i-clock"/></svg> 9 oy</li>
+              <li><svg class="icon"><use href="#i-users"/></svg> Haftada 3 kun</li>
+            </ul>
+            <footer><span class="price">Bepul (grant)</span><a class="link-more" href="#aloqa">Yozilish <svg class="icon"><use href="#i-arrow-right"/></svg></a></footer>
+          </article>
+          <article class="course-card neu reveal" style="--d:.05s" data-cat="it">
+            <header><span class="level lvl-beg">Boshlang'ich</span><span class="cat-chip">IT</span></header>
+            <h3>Frontend dasturlash (React)</h3>
+            <p>Noldan professional interfayslargacha: HTML, CSS, JavaScript, React va deploy amaliyoti.</p>
+            <ul class="meta" role="list">
+              <li><svg class="icon"><use href="#i-clock"/></svg> 6 oy</li>
+              <li><svg class="icon"><use href="#i-users"/></svg> Haftada 3 kun</li>
+            </ul>
+            <footer><span class="price">Bepul (grant)</span><a class="link-more" href="#aloqa">Yozilish <svg class="icon"><use href="#i-arrow-right"/></svg></a></footer>
+          </article>
+          <article class="course-card neu reveal" style="--d:.1s" data-cat="it">
+            <header><span class="level lvl-mid">O'rta</span><span class="cat-chip">IT</span></header>
+            <h3>Backend va DevOps (Node.js)</h3>
+            <p>API arxitekturasi, ma'lumotlar bazasi, Docker va CI/CD asoslari bilan production darajadagi backend.</p>
+            <ul class="meta" role="list">
+              <li><svg class="icon"><use href="#i-clock"/></svg> 8 oy</li>
+              <li><svg class="icon"><use href="#i-users"/></svg> Haftada 2 kun</li>
+            </ul>
+            <footer><span class="price">Bepul (grant)</span><a class="link-more" href="#aloqa">Yozilish <svg class="icon"><use href="#i-arrow-right"/></svg></a></footer>
+          </article>
+          <article class="course-card neu reveal" style="--d:.15s" data-cat="it">
+            <header><span class="level lvl-mid">O'rta</span><span class="cat-chip">IT</span></header>
+            <h3>Mobil ilovalar (Flutter)</h3>
+            <p>Dart tili, UI komponentlar, API integratsiya va ilovani do'konlarga chiqarishgacha bo'lgan jarayon.</p>
+            <ul class="meta" role="list">
+              <li><svg class="icon"><use href="#i-clock"/></svg> 7 oy</li>
+              <li><svg class="icon"><use href="#i-users"/></svg> Haftada 2 kun</li>
+            </ul>
+            <footer><span class="price">Bepul (grant)</span><a class="link-more" href="#aloqa">Yozilish <svg class="icon"><use href="#i-arrow-right"/></svg></a></footer>
+          </article>
+          <article class="course-card neu reveal" data-cat="biznes">
+            <header><span class="level lvl-beg">Boshlang'ich</span><span class="cat-chip chip-biz">Biznes</span></header>
+            <h3>Tadbirkorlik va startup asoslari</h3>
+            <p>Biznes-g'oya validatsiyasi, moliyaviy model, pitch-deck va demo-day da investorlar oldida himoya.</p>
+            <ul class="meta" role="list">
+              <li><svg class="icon"><use href="#i-clock"/></svg> 4 oy</li>
+              <li><svg class="icon"><use href="#i-users"/></svg> Haftada 2 kun</li>
+            </ul>
+            <footer><span class="price">Bepul (grant)</span><a class="link-more" href="#aloqa">Yozilish <svg class="icon"><use href="#i-arrow-right"/></svg></a></footer>
+          </article>
+          <article class="course-card neu reveal" style="--d:.05s" data-cat="biznes">
+            <header><span class="level lvl-beg">Boshlang'ich</span><span class="cat-chip chip-biz">Biznes</span></header>
+            <h3>Moliyaviy savodxonlik</h3>
+            <p>Shaxsiy byudjet, investitsiya asoslari, buxgalteriya kirish va soliq savodxonligi amaliy keyslarda.</p>
+            <ul class="meta" role="list">
+              <li><svg class="icon"><use href="#i-clock"/></svg> 5 oy</li>
+              <li><svg class="icon"><use href="#i-users"/></svg> Haftada 2 kun</li>
+            </ul>
+            <footer><span class="price">Bepul (grant)</span><a class="link-more" href="#aloqa">Yozilish <svg class="icon"><use href="#i-arrow-right"/></svg></a></footer>
+          </article>
+          <article class="course-card neu reveal" style="--d:.1s" data-cat="biznes">
+            <header><span class="level lvl-mid">O'rta</span><span class="cat-chip chip-biz">Biznes</span></header>
+            <h3>Raqamli marketing va SMM</h3>
+            <p>Strategiya, kontent-produksiya, target reklama va analitika — real brendlar uchun kampaniya.</p>
+            <ul class="meta" role="list">
+              <li><svg class="icon"><use href="#i-clock"/></svg> 4 oy</li>
+              <li><svg class="icon"><use href="#i-users"/></svg> Haftada 2 kun</li>
+            </ul>
+            <footer><span class="price">Bepul (grant)</span><a class="link-more" href="#aloqa">Yozilish <svg class="icon"><use href="#i-arrow-right"/></svg></a></footer>
+          </article>
+          <article class="course-card neu reveal" style="--d:.15s" data-cat="biznes">
+            <header><span class="level lvl-mid">O'rta</span><span class="cat-chip chip-biz">Biznes</span></header>
+            <h3>Loyiha boshqaruvi (Agile)</h3>
+            <p>Scrum rollari, sprint rejalashtirish, jamoaviy komunikatsiya va real loyihalarda scrum-master amaliyoti.</p>
+            <ul class="meta" role="list">
+              <li><svg class="icon"><use href="#i-clock"/></svg> 3 oy</li>
+              <li><svg class="icon"><use href="#i-users"/></svg> Haftada 1 kun</li>
+            </ul>
+            <footer><span class="price">Bepul (grant)</span><a class="link-more" href="#aloqa">Yozilish <svg class="icon"><use href="#i-arrow-right"/></svg></a></footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= USTOZLAR ======= -->
+    <section class="section section-alt" id="ustozlar">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker reveal">Jamoa</span>
+          <h2 class="reveal" style="--d:.05s">Amaliyotchi <span class="grad-text">mentorlar</span></h2>
+          <p class="section-sub reveal" style="--d:.1s">Ustozlarimiz faqat o'qitmaydi — ular sanoatda faol ishlaydigan mutaxassislar.</p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card neu reveal">
+            <span class="avatar neu-inset" aria-hidden="true">DK</span>
+            <h3>Dilnoza Karimova</h3>
+            <p class="role">IT yo'nalishi rahbari</p>
+            <ul class="tags" role="list"><li>Python</li><li>AI/ML</li><li>12 yil tajriba</li></ul>
+            <div class="socials"><a href="#aloqa" aria-label="Telegram"><svg class="icon"><use href="#i-tg"/></svg></a><a href="#aloqa" aria-label="LinkedIn"><svg class="icon"><use href="#i-briefcase"/></svg></a></div>
+          </article>
+          <article class="team-card neu reveal" style="--d:.05s">
+            <span class="avatar neu-inset" aria-hidden="true">JT</span>
+            <h3>Jasur Toshpo'latov</h3>
+            <p class="role">Backend arxitektori</p>
+            <ul class="tags" role="list"><li>Node.js</li><li>DevOps</li><li>9 yil tajriba</li></ul>
+            <div class="socials"><a href="#aloqa" aria-label="Telegram"><svg class="icon"><use href="#i-tg"/></svg></a><a href="#aloqa" aria-label="GitHub"><svg class="icon"><use href="#i-code"/></svg></a></div>
+          </article>
+          <article class="team-card neu reveal" style="--d:.1s">
+            <span class="avatar neu-inset" aria-hidden="true">MY</span>
+            <h3>Malika Yusupova</h3>
+            <p class="role">Biznes maktabi rahbari, MBA</p>
+            <ul class="tags" role="list"><li>Strategiya</li><li>Moliya</li><li>14 yil tajriba</li></ul>
+            <div class="socials"><a href="#aloqa" aria-label="Telegram"><svg class="icon"><use href="#i-tg"/></svg></a><a href="#aloqa" aria-label="LinkedIn"><svg class="icon"><use href="#i-briefcase"/></svg></a></div>
+          </article>
+          <article class="team-card neu reveal" style="--d:.15s">
+            <span class="avatar neu-inset" aria-hidden="true">BR</span>
+            <h3>Bekzod Rahimov</h3>
+            <p class="role">Robototexnika mentori</p>
+            <ul class="tags" role="list"><li>Arduino</li><li>3D print</li><li>8 yil tajriba</li></ul>
+            <div class="socials"><a href="#aloqa" aria-label="Telegram"><svg class="icon"><use href="#i-tg"/></svg></a><a href="#aloqa" aria-label="YouTube"><svg class="icon"><use href="#i-yt"/></svg></a></div>
+          </article>
+          <article class="team-card neu reveal" style="--d:.2s">
+            <span class="avatar neu-inset" aria-hidden="true">NS</span>
+            <h3>Nilufar Sodiqova</h3>
+            <p class="role">Raqamli marketing mentori</p>
+            <ul class="tags" role="list"><li>SMM</li><li>Brend</li><li>7 yil tajriba</li></ul>
+            <div class="socials"><a href="#aloqa" aria-label="Instagram"><svg class="icon"><use href="#i-ig"/></svg></a><a href="#aloqa" aria-label="Telegram"><svg class="icon"><use href="#i-tg"/></svg></a></div>
+          </article>
+          <article class="team-card neu reveal" style="--d:.25s">
+            <span class="avatar neu-inset" aria-hidden="true">ON</span>
+            <h3>Otabek Nazarov</h3>
+            <p class="role">Algoritmlar va matematika</p>
+            <ul class="tags" role="list"><li>Olimpiada</li><li>C++</li><li>10 yil tajriba</li></ul>
+            <div class="socials"><a href="#aloqa" aria-label="Telegram"><svg class="icon"><use href="#i-tg"/></svg></a><a href="#aloqa" aria-label="GitHub"><svg class="icon"><use href="#i-code"/></svg></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= YUTUQLAR ======= -->
+    <section class="section" id="yutuqlar">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker reveal">Yutuqlar</span>
+          <h2 class="reveal" style="--d:.05s">Raqamlarda <span class="grad-text">natijamiz</span></h2>
+        </div>
+
+        <div class="stats-band neu reveal">
+          <div class="stat"><strong class="counter" data-count="1240" data-suffix="+">0</strong><span>o'quvchi tahsil olmoqda</span></div>
+          <div class="stat"><strong class="counter" data-count="120" data-suffix="+">0</strong><span>olimpiada medallari</span></div>
+          <div class="stat"><strong class="counter" data-count="98" data-suffix="%">0</strong><span>oliy ta'limga qabul</span></div>
+          <div class="stat"><strong class="counter" data-count="34">0</strong><span>hamkor tashkilotlar</span></div>
+        </div>
+
+        <div class="timeline">
+          <div class="tl-item reveal"><span class="tl-dot neu" aria-hidden="true"></span><span class="tl-year neu-inset">2018</span><div class="tl-body"><h3>Maktab tashkil etildi</h3><p>Birinchi qabulda 120 o'quvchi va 6 ta o'quv xonasi bilan faoliyat boshladik.</p></div></div>
+          <div class="tl-item reveal" style="--d:.05s"><span class="tl-dot neu" aria-hidden="true"></span><span class="tl-year neu-inset">2020</span><div class="tl-body"><h3>IT laboratoriyalari ochildi</h3><p>120 o'rinli kompyuter labi, robototexnika studiyasi va maker-space ishga tushdi.</p></div></div>
+          <div class="tl-item reveal" style="--d:.1s"><span class="tl-dot neu" aria-hidden="true"></span><span class="tl-year neu-inset">2022</span><div class="tl-body"><h3>Xalqaro hamkorlik</h3><p>6 mamlakat maktablari bilan almashinuv dasturlari va qo'shma onlayn olimpiadalar yo'lga qo'yildi.</p></div></div>
+          <div class="tl-item reveal" style="--d:.15s"><span class="tl-dot neu" aria-hidden="true"></span><span class="tl-year neu-inset">2023</span><div class="tl-body"><h3>Biznes inkubator</h3><p>O'quvchi startaplari uchun mentorlik va grant dasturi; ilk 12 jamoa demo-day da qatnashdi.</p></div></div>
+          <div class="tl-item reveal" style="--d:.2s"><span class="tl-dot neu" aria-hidden="true"></span><span class="tl-year neu-inset">2025</span><div class="tl-body"><h3>Rekord natijalar</h3><p>Respublika olimpiadalarida 40+ medal va xalqaro hackathonlarda 2 ta g'oliblik.</p></div></div>
+          <div class="tl-item reveal" style="--d:.25s"><span class="tl-dot neu" aria-hidden="true"></span><span class="tl-year neu-inset">2026</span><div class="tl-body"><h3>Yangi kampus</h3><p>IT va biznes markazi hamda coworking zonasi ochildi — o'quvchilar soni 1240 taga yetdi.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= GALEREYA ======= -->
+    <section class="section section-alt" id="galereya">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker reveal">Galereya</span>
+          <h2 class="reveal" style="--d:.05s">Maktab hayoti <span class="grad-text">lavhalari</span></h2>
+          <p class="section-sub reveal" style="--d:.1s">Rasm ustiga bosing — kattaroq ko'rasiz.</p>
+        </div>
+        <div class="gallery">
+          <button class="g-item g-wide neu reveal" type="button" data-caption="IT laboratoriyada amaliy dars">
+            <img src="assets/img/it-lab.webp" alt="IT laboratoriyada amaliy dars" loading="lazy" />
+            <span class="g-cap">IT laboratoriyada amaliy dars</span>
+          </button>
+          <button class="g-item neu reveal" style="--d:.05s" type="button" data-caption="Biznes-sessiya: startup pitch mashqi">
+            <img src="assets/img/business-class.webp" alt="Biznes sessorida startup pitch mashqi" loading="lazy" />
+            <span class="g-cap">Biznes-sessiya: startup pitch</span>
+          </button>
+          <button class="g-item neu reveal" style="--d:.1s" type="button" data-caption="Robototexnika to'garagi">
+            <img src="assets/img/robotics-lab.webp" alt="Robototexnika to'garagi mashg'uloti" loading="lazy" />
+            <span class="g-cap">Robototexnika to'garagi</span>
+          </button>
+          <button class="g-item g-tall neu reveal" style="--d:.15s" type="button" data-caption="Kutubxona va coworking zona">
+            <img src="assets/img/library.webp" alt="Maktab kutubxonasi va kovorking zonasi" loading="lazy" />
+            <span class="g-cap">Kutubxona va coworking</span>
+          </button>
+          <button class="g-item neu reveal" style="--d:.2s" type="button" data-caption="Olimpiada g'oliblarini taqdirlash">
+            <img src="assets/img/olympiad.webp" alt="Olimpiada g'oliblarini taqdirlash marosimi" loading="lazy" />
+            <span class="g-cap">Olimpiada g'oliblari</span>
+          </button>
+          <button class="g-item g-wide neu reveal" style="--d:.25s" type="button" data-caption="Kampus hayoti: tanaffus va muloqot">
+            <img src="assets/img/campus-life.webp" alt="Kampus hayoti, tanaffusdagi o'quvchilar" loading="lazy" />
+            <span class="g-cap">Kampus hayoti</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= FIKRLAR ======= -->
+    <section class="section" id="fikrlar">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker reveal">Fikrlar</span>
+          <h2 class="reveal" style="--d:.05s">Ota-onalar va <span class="grad-text">bitiruvchilar</span> deydi</h2>
+        </div>
+        <div class="slider reveal" id="slider">
+          <div class="slider-viewport neu-inset">
+            <div class="slider-track" id="sliderTrack">
+              <blockquote class="slide">
+                <div class="stars" aria-label="5 yulduzli baho"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
+                <p>«Farzandim bir yilda Python da o'z loyihasini yozadigan darajaga chiqdi. Eng muhimi — u yerda har kuni zavq bilan boradi.»</p>
+                <footer><span class="avatar avatar-sm neu-inset">GA</span><span><strong>Gulnora Ahmedova</strong><small>Ota-ona</small></span></footer>
+              </blockquote>
+              <blockquote class="slide">
+                <div class="stars" aria-label="5 yulduzli baho"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
+                <p>«Maktabdagi biznes inkubatorda jamoamiz bilan ilk buyurtmamizni oldik. Hozir o'z studiyamizni yuritamiz — hammasi shu yerdan boshlangan.»</p>
+                <footer><span class="avatar avatar-sm neu-inset">SM</span><span><strong>Sardor Mirzayev</strong><small>2024-yil bitiruvchisi</small></span></footer>
+              </blockquote>
+              <blockquote class="slide">
+                <div class="stars" aria-label="5 yulduzli baho"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
+                <p>«Stajirovka dasturida maktab o'quvchilari bilan ishladik: tayyorgarlik darajasi bozor talabidan yuqori. Uchtasini shtatga oldik.»</p>
+                <footer><span class="avatar avatar-sm neu-inset">AK</span><span><strong>Aziz Kamolov</strong><small>Hamkor kompaniya HR direktori</small></span></footer>
+              </blockquote>
+            </div>
+          </div>
+          <div class="slider-nav">
+            <button class="btn btn-ghost btn-icon" id="slidePrev" type="button" aria-label="Oldingi fikr"><svg class="icon"><use href="#i-chev-left"/></svg></button>
+            <div class="dots" id="sliderDots" role="tablist" aria-label="Fikrlar sahifalari"></div>
+            <button class="btn btn-ghost btn-icon" id="slideNext" type="button" aria-label="Keyingi fikr"><svg class="icon"><use href="#i-chev-right"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= YANGILIKLAR ======= -->
+    <section class="section section-alt" id="yangiliklar">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker reveal">Yangiliklar</span>
+          <h2 class="reveal" style="--d:.05s">So'nggi <span class="grad-text">voqealar</span></h2>
+        </div>
+        <div class="news-grid">
+          <article class="news-card neu reveal">
+            <div class="news-top"><span class="news-date neu-inset"><svg class="icon"><use href="#i-cal"/></svg> 2026-08-20</span><span class="cat-chip">Qabul</span></div>
+            <h3>2026/27 o'quv yiliga qabul boshlandi</h3>
+            <p>IT va biznes yo'nalishlariga 320 o'rin ajratildi. Kirish imtihoni va suhbat orqali saralash o'tkaziladi.</p>
+            <a class="link-more" href="#aloqa">Batafsil <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+          </article>
+          <article class="news-card neu reveal" style="--d:.05s">
+            <div class="news-top"><span class="news-date neu-inset"><svg class="icon"><use href="#i-cal"/></svg> 2026-06-14</span><span class="cat-chip">Hackathon</span></div>
+            <h3>«Smart City» hackathoni g'oliblari</h3>
+            <p>O'quvchilarimiz 48 soatlik hackathonda shahar logistikasi uchun AI yechimini taqdim etib, 1-o'rinni oldi.</p>
+            <a class="link-more" href="#galereya">Batafsil <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+          </article>
+          <article class="news-card neu reveal" style="--d:.1s">
+            <div class="news-top"><span class="news-date neu-inset"><svg class="icon"><use href="#i-cal"/></svg> 2026-05-02</span><span class="cat-chip chip-biz">Inkubator</span></div>
+            <h3>Biznes inkubator: 12 ta yangi startup</h3>
+            <p>Demo-day da 12 jamoa investorlar oldida pitch qildi; 4 loyiha ilk grant mablag'ini qo'lga kiritdi.</p>
+            <a class="link-more" href="#yutuqlar">Batafsil <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======= ALOQA ======= -->
+    <section class="section" id="aloqa">
+      <div class="container">
+        <div class="section-head">
+          <span class="kicker reveal">Aloqa</span>
+          <h2 class="reveal" style="--d:.05s">Qabulga <span class="grad-text">yoziling</span></h2>
+          <p class="section-sub reveal" style="--d:.1s">Ariza qoldiring — qabul komissiyasi 24 soat ichida siz bilan bog'lanadi.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <div class="info-card neu reveal"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-pin"/></svg></span><div><h3>Manzil</h3><p>Toshkent sh., Chilonzor tumani,<br/>Bunyodkor shoh ko'chasi, 12-uy</p></div></div>
+            <div class="info-card neu reveal" style="--d:.05s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-call"/></svg></span><div><h3>Telefon</h3><p><a href="tel:+998712007007">+998 71 200 70 07</a><br/><a href="tel:+998901234567">+998 90 123 45 67</a></p></div></div>
+            <div class="info-card neu reveal" style="--d:.1s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-mail"/></svg></span><div><h3>Email</h3><p><a href="mailto:info@bitmaktab.uz">info@bitmaktab.uz</a><br/><a href="mailto:qabul@bitmaktab.uz">qabul@bitmaktab.uz</a></p></div></div>
+            <div class="info-card neu reveal" style="--d:.15s"><span class="icon-tile neu-inset"><svg class="icon"><use href="#i-clock"/></svg></span><div><h3>Ish vaqti</h3><p>Dushanba – Shanba: 8:00 – 18:00<br/>Yakshanba: dam olish</p></div></div>
+            <div class="social-row reveal" style="--d:.2s">
+              <a class="social-btn neu" href="#aloqa" aria-label="Telegram"><svg class="icon"><use href="#i-tg"/></svg></a>
+              <a class="social-btn neu" href="#aloqa" aria-label="Instagram"><svg class="icon"><use href="#i-ig"/></svg></a>
+              <a class="social-btn neu" href="#aloqa" aria-label="Facebook"><svg class="icon"><use href="#i-fb"/></svg></a>
+              <a class="social-btn neu" href="#aloqa" aria-label="YouTube"><svg class="icon"><use href="#i-yt"/></svg></a>
+            </div>
+          </div>
+
+          <form class="contact-form neu reveal" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="fName">Ism va familiya *</label>
+                <input class="neu-inset" type="text" id="fName" name="name" placeholder="Masalan: Ali Valiyev" autocomplete="name" required />
+                <small class="err" aria-live="polite"></small>
+              </div>
+              <div class="field">
+                <label for="fPhone">Telefon raqam *</label>
+                <input class="neu-inset" type="tel" id="fPhone" name="phone" placeholder="+998 90 123 45 67" autocomplete="tel" required />
+                <small class="err" aria-live="polite"></small>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="fEmail">Email</label>
+                <input class="neu-inset" type="email" id="fEmail" name="email" placeholder="siz@example.com" autocomplete="email" />
+                <small class="err" aria-live="polite"></small>
+              </div>
+              <div class="field">
+                <label for="fDir">Yo'nalish *</label>
+                <select class="neu-inset" id="fDir" name="direction" required>
+                  <option value="">Tanlang…</option>
+                  <option>IT — Dasturlash</option>
+                  <option>IT — Robototexnika</option>
+                  <option>IT — Sun'iy intellekt</option>
+                  <option>Biznes — Tadbirkorlik</option>
+                  <option>Biznes — Moliya</option>
+                  <option>Biznes — Marketing</option>
+                </select>
+                <small class="err" aria-live="polite"></small>
+              </div>
+            </div>
+            <div class="field">
+              <label for="fMsg">Xabar</label>
+              <textarea class="neu-inset" id="fMsg" name="message" rows="4" placeholder="Savolingiz yoki izohingiz…"></textarea>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">
+              <svg class="icon"><use href="#i-send"/></svg>
+              Ariza yuborish
+            </button>
+            <p class="form-note">* — to'ldirilishi shart maydonlar. Ma'lumotlaringiz faqat qabul jarayoni uchun ishlatiladi.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="f-col">
+        <a class="brand" href="#bosh">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><rect x="2" y="2" width="44" height="44" rx="14" fill="url(#lg1)"/><path d="M24 13l10 4.5-10 4.5-10-4.5z" fill="#fff" opacity=".95"/><path d="M18 21v4.2c0 1.9 2.7 3.3 6 3.3s6-1.4 6-3.3V21" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><path d="M30 19.5v5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/><circle cx="30" cy="26.5" r="1.6" fill="#fff"/></svg>
+          </span>
+          <span class="brand-text"><strong>BIT Maktab</strong><small>Biznes &amp; IT ta'lim markazi</small></span>
+        </a>
+        <p class="f-about">Biznes va IT ga ixtisoslashgan maktab — kelajak kasblarini bugun o'rgatuvchi zamonaviy ta'lim maskani.</p>
+        <div class="social-row">
+          <a class="social-btn neu" href="#aloqa" aria-label="Telegram"><svg class="icon"><use href="#i-tg"/></svg></a>
+          <a class="social-btn neu" href="#aloqa" aria-label="Instagram"><svg class="icon"><use href="#i-ig"/></svg></a>
+          <a class="social-btn neu" href="#aloqa" aria-label="Facebook"><svg class="icon"><use href="#i-fb"/></svg></a>
+          <a class="social-btn neu" href="#aloqa" aria-label="YouTube"><svg class="icon"><use href="#i-yt"/></svg></a>
+        </div>
+      </div>
+      <nav class="f-col" aria-label="Tezkor havolalar">
+        <h3>Sahifalar</h3>
+        <a href="#haqida">Maktab haqida</a>
+        <a href="#yonalishlar">Yo'nalishlar</a>
+        <a href="#kurslar">Kurslar</a>
+        <a href="#ustozlar">Ustozlar</a>
+        <a href="#galereya">Galereya</a>
+      </nav>
+      <div class="f-col">
+        <h3>Aloqa</h3>
+        <a href="tel:+998712007007">+998 71 200 70 07</a>
+        <a href="mailto:info@bitmaktab.uz">info@bitmaktab.uz</a>
+        <p>Toshkent sh., Chilonzor tumani,<br/>Bunyodkor shoh ko'chasi, 12-uy</p>
+      </div>
+      <div class="f-col">
+        <h3>Ish vaqti</h3>
+        <p>Dushanba – Shanba<br/>8:00 – 18:00</p>
+        <p>Qabul komissiyasi:<br/>9:00 – 17:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© <span id="year">2026</span> Biznes va IT ga ixtisoslashgan maktab. Barcha huquqlar himoyalangan.</p>
+        <p class="made">Soft UI · kun va tun rejimi · <span class="grad-text">sariq palitra</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======= LIGHTBOX ======= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Rasm ko'rish" hidden>
+    <button class="lb-close btn btn-ghost btn-icon" id="lbClose" type="button" aria-label="Yopish"><svg class="icon"><use href="#i-x"/></svg></button>
+    <button class="lb-prev btn btn-ghost btn-icon" id="lbPrev" type="button" aria-label="Oldingi rasm"><svg class="icon"><use href="#i-chev-left"/></svg></button>
+    <figure class="lb-figure neu">
+      <img id="lbImg" src="" alt="" />
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <button class="lb-next btn btn-ghost btn-icon" id="lbNext" type="button" aria-label="Keyingi rasm"><svg class="icon"><use href="#i-chev-right"/></svg></button>
+  </div>
+
+  <button class="to-top neu" id="toTop" type="button" aria-label="Yuqoriga qaytish"><svg class="icon"><use href="#i-arrow-up"/></svg></button>
+  <div class="toast neu" id="toast" role="status" aria-live="polite" hidden>
+    <svg class="icon"><use href="#i-check"/></svg><span id="toastMsg">Arizangiz qabul qilindi!</span>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

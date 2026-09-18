@@ -1,0 +1,180 @@
+/* =========================================================
+   base.css — Reset, tipografika, utility sinflar
+   ========================================================= */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+* { margin: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 12px);
+}
+
+body {
+  font-family: var(--font);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  color: var(--text);
+  background:
+    radial-gradient(1100px 520px at 88% -8%, var(--accent-soft), transparent 62%),
+    radial-gradient(900px 480px at -12% 42%, var(--accent-soft), transparent 60%),
+    var(--bg);
+  min-height: 100vh;
+  transition: background-color var(--t-med), color var(--t-med);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip; /* sticky header ishlashi uchun hidden emas */
+}
+
+img, svg, video { display: block; max-width: 100%; }
+img { height: auto; }
+
+h1, h2, h3, h4 { line-height: 1.18; font-weight: 800; letter-spacing: -.02em; }
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+p { color: var(--muted); }
+
+a { color: inherit; text-decoration: none; }
+
+ul { list-style: none; padding: 0; }
+
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+::selection { background: var(--gold-2); color: #3a2e0f; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 11px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--gold-2), var(--gold-3));
+  border-radius: 8px;
+  border: 3px solid var(--bg);
+}
+
+/* Focus */
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--gold-2) 65%, transparent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* --- Layout utilities --- */
+.container {
+  width: min(var(--container), 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+.section { padding-block: var(--sec-pad); }
+.section-alt { background: var(--bg-alt); transition: background-color var(--t-med); }
+
+.section-head {
+  max-width: 680px;
+  margin: 0 auto clamp(2.2rem, 5vw, 3.4rem);
+  text-align: center;
+  display: grid;
+  gap: .8rem;
+}
+
+.section-sub { font-size: 1.02rem; }
+
+.kicker {
+  display: inline-block;
+  justify-self: center;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  background: var(--accent-soft);
+  box-shadow: var(--neu-out-xs);
+  padding: .45rem 1.1rem;
+  border-radius: var(--r-pill);
+}
+
+.grad-text {
+  background: var(--grad-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.lead { font-size: clamp(1rem, 1.6vw, 1.13rem); }
+
+/* --- Ikonkalar --- */
+.icon {
+  width: 1.25em;
+  height: 1.25em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
+/* --- Neymorfizm yordamchi sinflari --- */
+.neu {
+  background: var(--surface);
+  border-radius: var(--r-lg);
+  box-shadow: var(--neu-out);
+  transition: box-shadow var(--t-med), transform var(--t-med), background-color var(--t-med);
+}
+
+.neu-inset { box-shadow: var(--neu-in); }
+
+.neu-frame {
+  padding: .8rem;
+  border-radius: var(--r-xl);
+}
+.neu-frame img {
+  border-radius: calc(var(--r-xl) - 10px);
+  width: 100%;
+  object-fit: cover;
+}
+
+/* --- Reveal animatsiyasi --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity .7s ease var(--d, 0s), transform .7s cubic-bezier(.22, 1, .36, 1) var(--d, 0s);
+}
+.reveal.in { opacity: 1; transform: none; }
+
+/* --- Skip link --- */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 200;
+  background: var(--gold-2);
+  color: #3a2e0f;
+  font-weight: 700;
+  padding: .7rem 1.2rem;
+  border-radius: var(--r-pill);
+  transition: top var(--t-fast);
+}
+.skip-link:focus { top: 1rem; }
+
+/* --- Scroll progress --- */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: 4px;
+  z-index: 120;
+  background: var(--grad-gold);
+  transform-origin: 0 50%;
+  transform: scaleX(0);
+}
+
+/* --- Harakatni kamaytirish --- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

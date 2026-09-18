@@ -1,0 +1,13 @@
+{
+  "name": "biznes-va-it-ga-ixtisoslashgan-maktab",
+  "version": "1.0.0",
+  "description": "Biznes va IT ga ixtisoslashgan maktab portfolio sayti — Soft UI (neymorfizm), kun/tun rejimi, sariq palitra",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs"
+  },
+  "keywords": ["portfolio", "soft-ui", "neumorphism", "maktab", "IT", "biznes"],
+  "license": "MIT",
+  "private": true
+}

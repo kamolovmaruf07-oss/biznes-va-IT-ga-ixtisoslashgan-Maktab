@@ -1,0 +1,13 @@
+# Dependensilar va build artefaktlari
+node_modules/
+dist/
+build/
+
+# OS / editor axborotlari
+.DS_Store
+Thumbs.db
+*.log
+
+# Mahalliy muhit sozlamalari
+.env
+.env.local

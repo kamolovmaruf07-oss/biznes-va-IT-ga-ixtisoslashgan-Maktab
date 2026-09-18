@@ -1,0 +1,17 @@
+{
+  "name": "Biznes va IT ga ixtisoslashgan maktab",
+  "short_name": "BIT Maktab",
+  "description": "Biznes va IT ga ixtisoslashgan maktab portfolio sayti",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8f1dc",
+  "theme_color": "#f2b705",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
