@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kamolovmaruf07-oss.github.io/biznes-va-IT-ga-ixtisoslashgan-Maktab/sitemap.xml
